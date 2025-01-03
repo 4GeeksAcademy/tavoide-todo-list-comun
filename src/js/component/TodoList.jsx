@@ -36,17 +36,21 @@ const TodoList = () => {
     };
 
     return (
-        <div className="d-grid ">
+        <div className="alert alert-warning" role="alert">
+            <h1>LISTA DE TAREAS</h1>
+            <h2>     || </h2>
+            <h2>    \ /</h2>
+        <div className="d-grid col-10 mx-auto">
 
             <input type="text"
                 onChange={(e) => setInputValue(e.target.value)}
                 value={inputValue}
                 onKeyDown={addTask}
-                className="list-group-item-success"
+                className="list-group-item-light"
             />
 
             <ul className="list-group">
-                {list.length === 0 ? (<li className="list-group-item-success text-start text-muted">No hay tareas. Agrega una tarea arriba! :)</li>) : (list.map((item, index) => (
+                {list.length === 0 ? (<li className="list-group-item-success text-start text-muted">No hay tareas. <strong>Agrega una nueva!</strong>)</li>) : (list.map((item, index) => (
                     <li
                         key={index}
                         onMouseOver={handleMouseOver}
@@ -65,6 +69,7 @@ const TodoList = () => {
 
             </ul>
 
+        </div>
         </div>
     );
 };
